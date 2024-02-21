@@ -85,7 +85,7 @@ header {
   font-weight: 600;
 }
 section {
-  padding: 2.5rem 1.5rem;
+  padding: 2.5rem 1.5rem 4rem;
 
   & h2 {
     font-size: 2rem;
@@ -96,7 +96,8 @@ section {
     color: #fff;
   }
 }
-#container {
+#container,
+#faq {
   background-color: #192841;
 }
 #features,
@@ -121,7 +122,7 @@ section {
   font-family: var(--font-family);
 }
 .review-card {
-  width: 80%;
+  width: 90%;
   padding: 1rem;
   border-radius: 10px;
   background-color: hsla(218, 44%, 18%, 0.5);
@@ -170,58 +171,67 @@ section {
   }
 }
 #offer {
-  padding: 2rem 0;
+  margin: 4.5rem 0;
   text-align: center;
-  background-color: #192841;
 }
-#faq {
-  color: #fff;
-}
-input {
-  display: none;
-}
-input:checked ~ .answer {
-  display: block;
-}
-label,
-.answer {
-  margin: 0 auto;
-  width: 80%;
-  padding: 1rem;
-}
-label {
-  display: block;
-  background-color: #192841;
-  font-size: 1.5rem;
-  cursor: pointer;
+
+#questions > div {
   position: relative;
-}
-label::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: 20px;
-  width: 25px;
-  height: 25px;
-  transform: translateY(-50%);
-  background-image: url("assets/arrow-down.svg");
-  background-size: contain;
-  transition: transform 0.3s;
-}
-input:checked ~ label::after {
-  transform: translateY(-50%) rotate(-0.25turn);
+  z-index: 1;
+  margin-inline: auto;
+  width: 90%;
+
+  & input {
+    display: none;
+  }
+  & input:checked ~ .answer {
+    position: relative;
+    transform: translateY(0);
+    visibility: visible;
+    opacity: 1;
+  }
+  input:checked ~ label::after {
+    transform: translateY(-50%) rotate(-0.25turn);
+  }
+  & label,
+  .answer {
+    padding: 0.5rem 1rem;
+  }
+  & label {
+    display: block;
+    font-size: 1.1rem;
+    cursor: pointer;
+    position: relative;
+    background: #192841;
+    color: #fff;
+    font-family: var(--font-family);
+  }
+  label::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    width: 1.5rem;
+    height: 1.5rem;
+    transform: translateY(-50%);
+    background-image: url("assets/arrow-down.svg");
+    background-size: contain;
+    transition: transform 0.3s;
+  }
 }
 .answer {
-  font-size: 1.19rem;
-  line-height: 1.6;
-  background-color: rgba(25, 40, 65, 0.5);
-  display: none;
-  transition: display 0.3s;
-  border-radius: 0 0 10px 10px;
-  margin-bottom: 5px;
+  position: absolute;
+  transform: translateY(calc(-100% + 10px));
+  z-index: -1;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 150ms ease-in-out;
 }
 .answer p {
-  opacity: 0.75;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #fff;
+  font-family: var(--font-family);
 }
 footer {
   background-color: #192841;
