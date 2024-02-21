@@ -90,7 +90,7 @@ section {
   & h2 {
     font-size: 2rem;
     font-family: var(--font-family);
-    font-weight: 500;
+    font-weight: 700;
     margin-bottom: 2.5rem;
     text-align: center;
     color: #fff;
@@ -99,7 +99,8 @@ section {
 #container {
   background-color: #192841;
 }
-#features {
+#features,
+#reviews {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -119,59 +120,41 @@ section {
   font-size: 1.19rem;
   font-family: var(--font-family);
 }
-#container-2 {
-  text-align: center;
-  color: #fff;
-  margin: 1.75rem 0;
-}
-#testimonials {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-}
-#testimonials > div {
-  width: 75%;
+.review-card {
+  width: 80%;
   padding: 1rem;
   border-radius: 10px;
-  background-color: rgba(25, 40, 65, 0.5);
+  background-color: hsla(218, 44%, 18%, 0.5);
+
+  & p {
+    color: #fff;
+    font-family: var(--font-family);
+  }
 }
 .info {
+  margin-bottom: 1rem;
   display: flex;
-}
-.profile img {
-  border-radius: 50%;
-  width: 4rem;
-}
-.det {
-  margin-left: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.det p {
-  margin: 0;
-}
-.name {
-  font-size: 1rem;
-  margin-left: 0.1rem;
-  font-weight: 600;
-}
-.job {
-  font-size: 0.9rem;
-  opacity: 75%;
-}
-.review h4 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  line-height: 1.5;
-  margin-bottom: 0.8rem;
+  align-items: end;
+  gap: 0.5rem;
+
+  & .profile img {
+    border-radius: 50%;
+    width: 4rem;
+  }
+
+  & .name {
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+
+  & .job {
+    font-size: 0.8rem;
+  }
 }
 .review p {
-  font-size: 1.19rem;
+  font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
-  opacity: 0.75;
 }
 #offer {
   text-align: center;
@@ -304,7 +287,7 @@ footer {
     flex: 0 1 320px;
     font-size: 1.56rem;
   }
-  #testimonials > div {
+  #reviews > div {
     flex: 0 1 320px;
     font-size: 1.56rem;
   }
@@ -344,7 +327,7 @@ footer {
     height: 38px;
   }
   #features,
-  #testimonials {
+  #reviews {
     min-width: 700px;
   }
   label,
@@ -356,7 +339,7 @@ footer {
 }
 @media (width >= 1025px) {
   #features,
-  #testimonials {
+  #reviews {
     min-width: 1016px;
   }
 }
