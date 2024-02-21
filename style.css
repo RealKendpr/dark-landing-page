@@ -151,10 +151,23 @@ section {
     font-size: 0.8rem;
   }
 }
-.review p {
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.5;
+.review {
+  &::before {
+    content: "";
+    display: inline-block;
+    background: url(./assets/quote.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  & p {
+    display: inline;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+  }
 }
 #offer {
   text-align: center;
