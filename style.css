@@ -76,13 +76,13 @@ header {
   & h2 {
     font-size: 1.87em;
   }
-  & a {
-    font-size: 1rem;
-    padding: 0.7rem 3rem;
-    background-color: #f8e473;
-    border-radius: 180px;
-    font-weight: 600;
-  }
+}
+.cta {
+  font-size: 1rem;
+  padding: 0.7rem 3rem;
+  background-color: #f8e473;
+  border-radius: 180px;
+  font-weight: 600;
 }
 section {
   padding: 2.5rem 1.5rem;
@@ -170,9 +170,9 @@ section {
   }
 }
 #offer {
+  padding: 2rem 0;
   text-align: center;
   background-color: #192841;
-  margin: 0 0 1.5rem 0;
 }
 #faq {
   color: #fff;
