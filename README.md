@@ -34,4 +34,4 @@ _Check the links below to see the live preview of the updated one_
 
 ## Author
 
-- [Kendpr](https://kendpr.github.io/kendpr-md)
+- [Kendpr](https://realkendpr.github.io/kendpr-md)
