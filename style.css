@@ -122,7 +122,8 @@ footer {
 }
 .feature p {
   color: #fff;
-  font-size: 1.19rem;
+  font-size: 1rem;
+  line-height: 1.5;
   font-family: var(--font-family);
 }
 .review-card {
@@ -240,22 +241,20 @@ footer {
 footer {
   background-color: #192841;
   margin-top: 3rem;
-
-  & > div:first-of-type {
-    display: grid;
-    gap: 10px;
-  }
 }
-#contact,
-#misc {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  /* font-weight: bold; */
+#foot-wrapper {
+  display: grid;
+  gap: 10px;
 
-  & ul {
+  & > div {
     display: flex;
-    gap: 2px;
+    justify-content: space-between;
+    align-items: end;
+
+    & ul {
+      display: flex;
+      gap: 12px;
+    }
   }
 }
 #foot-icon {
@@ -264,26 +263,25 @@ footer {
   text-decoration: underline wavy red;
   text-decoration-thickness: 1px;
 }
-/* #share li:hover img {
-  height: 1.5rem;
-} */
-#share li > img {
-  margin: 0 0.5rem;
-  height: 1.5rem;
-  transition: height 0.3s;
+#social {
+  & img {
+    height: 1.5rem;
+    transition: all 200ms ease-in-out;
+  }
+  & li:hover img {
+    transform: scale(1.2) translateY(-3px);
+  }
 }
 #email {
   color: #fff;
   font-size: 1rem;
 }
-#misc ul li a {
+#links li a {
   color: #fff;
-  /* line-height: 2.5rem; */
   font-size: 1rem;
-  padding: 5px;
   transition: text-decoration 0.3s ease;
 }
-#misc ul li:hover a {
+#links a:hover {
   text-decoration: underline #f8e473;
   text-underline-offset: 3px;
 }
@@ -294,16 +292,10 @@ footer {
   padding: 5px;
 }
 #cc p {
-  font-size: .9rem;
+  font-size: 0.8rem;
   color: #fff;
-  opacity: 0.75;
+  /* opacity: 0.75; */
 }
-/* ::-moz-selection {
-  background: rgba(0, 0, 0, 0.1);
-}
-::selection {
-  background: rgba(0, 0, 0, 0.1);
-} */
 @media (width >= 481px) {
   #icon {
     font-size: 2.19rem;
@@ -311,63 +303,23 @@ footer {
   button {
     margin: 5rem;
   }
-  #features > div {
-    flex: 0 1 320px;
-    font-size: 1.56rem;
-  }
-  #reviews > div {
-    flex: 0 1 320px;
-    font-size: 1.56rem;
-  }
-  .review h4 {
-    font-size: 1.8rem;
-  }
-  .review p {
-    font-size: 1.56rem;
-  }
-  #foot-icon {
-    font-size: 2.3rem;
-  }
-  #email {
-    font-size: 2rem;
-  }
-  #share li > img {
-    height: 2.5rem;
-  }
-  #share li:hover > img {
-    height: 2.8rem;
-  }
-  #misc ul li a {
-    font-size: 2rem;
-  }
-  #cc p {
-    font-size: 2rem;
-  }
-}
-@media (width >= 769px) {
-  h1 {
-    font-size: 6.25rem;
-  }
-  h3 {
-    font-size: 2.4rem;
-  }
-  h3 > img {
-    height: 38px;
-  }
   #features,
   #reviews {
-    min-width: 700px;
+    & > div {
+      flex: 0 1 320px;
+      font-size: 1.1rem;
+    }
   }
-  label,
-  .answer {
-    margin: 0 auto;
-    width: 320px;
-    padding: 1rem;
+  #questions,
+  #foot-wrapper {
+    width: 60%;
+    margin-inline: auto;
   }
-}
-@media (width >= 1025px) {
-  #features,
-  #reviews {
-    min-width: 1016px;
+  #email,
+  #links li a {
+    font-size: 1.1rem;
+  }
+  #social img {
+    height: 1.6rem;
   }
 }
