@@ -18,9 +18,14 @@ ul {
 :root {
   --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --dominant-clr: hsl(218, 44%, 18%);
+  --accent-clr: hsl(60, 92%, 71%);
+  --hover-clr: hsl(60, 100%, 84%);
+  --100-clr: hsl(218, 13%, 84%);
+  --900-clr: hsl(234, 78%, 7%);
 }
 body {
-  background: #040720;
+  background: var(--900-clr);
 }
 
 #bg {
@@ -31,14 +36,15 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  filter: blur(0.1rem);
+  filter: blur(0.2rem);
   opacity: 0.7;
   z-index: -1;
   position: fixed;
   top: 0;
   left: 0;
+  opacity: 0.4;
 }
-#main {
+#main-wrapper {
   position: absolute;
 }
 .icon {
@@ -59,7 +65,7 @@ nav {
   width: 100%;
   top: 0;
   left: 0;
-  padding: 1rem 0.5rem;
+  padding: 3rem 4rem;
 }
 header {
   min-height: 100svh;
@@ -68,24 +74,41 @@ header {
   flex-direction: column;
   gap: 1rem;
   justify-content: center;
-  color: #fff;
 
   & h1 {
     font-family: var(--font-family);
     font-weight: 700;
     font-size: 3rem;
     text-align: center;
+    color: var(--100-clr);
   }
   & h2 {
-    font-size: 1.87em;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 1.87rem;
+    color: var(--100-clr);
+
+    & img {
+      height: 24px;
+    }
   }
 }
 .cta {
   font-size: 1rem;
   padding: 0.7rem 3rem;
-  background-color: #f8e473;
+  background: var(--accent-clr);
+  color: var(--900-clr);
   border-radius: 180px;
   font-weight: 600;
+  font-family: var(--font-family);
+  transition: all 150ms ease-in-out;
+}
+.cta:hover {
+  background: var(--hover-clr);
+  transform: scale(1.1);
 }
 section,
 footer {
@@ -97,7 +120,7 @@ footer {
     font-weight: 700;
     margin-bottom: 2.5rem;
     text-align: center;
-    color: #fff;
+    color: var(--100-clr);
   }
 }
 #container,
@@ -115,13 +138,13 @@ footer {
   width: 50px;
 }
 .feature h4 {
-  color: #fff;
+  color: var(--100-clr);
   font-size: 1.5rem;
   font-family: var(--font-family);
   margin-bottom: 10px;
 }
 .feature p {
-  color: #fff;
+  color: var(--100-clr);
   font-size: 1rem;
   line-height: 1.5;
   font-family: var(--font-family);
@@ -130,10 +153,10 @@ footer {
   width: 90%;
   padding: 1rem;
   border-radius: 10px;
-  background-color: hsla(218, 44%, 18%, 0.5);
+  background: hsla(218, 44%, 18%, 0.5);
 
   & p {
-    color: #fff;
+    color: var(--100-clr);
     font-family: var(--font-family);
   }
 }
@@ -207,8 +230,9 @@ footer {
     font-size: 1.1rem;
     cursor: pointer;
     position: relative;
-    background: #192841;
-    color: #fff;
+    background: var(--dominant-clr);
+    color: var(--100-clr);
+    font-weight: 500;
     font-family: var(--font-family);
   }
   label::after {
@@ -218,7 +242,7 @@ footer {
     right: 20px;
     width: 1.5rem;
     height: 1.5rem;
-    transform: translateY(-50%);
+    transform: translateYs(-50%);
     background-image: url("assets/arrow-down.svg");
     background-size: contain;
     transition: transform 0.3s;
@@ -235,11 +259,11 @@ footer {
 .answer p {
   font-size: 1rem;
   line-height: 1.6;
-  color: #fff;
+  color: var(--100-clr);
   font-family: var(--font-family);
 }
 footer {
-  background-color: #192841;
+  background: var(--dominant-clr);
   margin-top: 3rem;
 }
 #foot-wrapper {
@@ -273,12 +297,14 @@ footer {
   }
 }
 #email {
-  color: #fff;
+  color: var(--100-clr);
   font-size: 1rem;
+  font-family: var(--font-family);
 }
 #links li a {
-  color: #fff;
+  color: var(--100-clr);
   font-size: 1rem;
+  font-family: var(--font-family);
   transition: text-decoration 0.3s ease;
 }
 #links a:hover {
@@ -288,13 +314,12 @@ footer {
 #cc {
   margin-top: 1rem;
   text-align: center;
-  background-color: #192841;
-  padding: 5px;
 }
 #cc p {
   font-size: 0.8rem;
-  color: #fff;
-  /* opacity: 0.75; */
+  color: var(--100-clr);
+  opacity: 0.8;
+  font-family: var(--font-family);
 }
 @media (width >= 481px) {
   #icon {
